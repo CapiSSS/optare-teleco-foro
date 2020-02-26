@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/prueba.css"/>
+    </head>
+    <body>
+        <form id="regForm" action="/action_page.php">
+            <h1>Optare Solutions</h1>
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">Miguel y Raúl se descargan desde la universidad compartiendo la misma conexión de 100Mbps un archivo de 1GB y 1Gb respectivamente. Un minuto después, Ardao se une y empieza a descargar un archivo de 274 millones de octetos. ¿Cuál es el último en acabar?
+                <p>
+                    <input type="radio" id="miguel" name="gb" value="miguel"/>
+                    <label for="male">Miguel</label>
+                </p>
+                <p>
+                    <input type="radio" id="raul" name="gb" value="raul"/>
+                    <label for="female">Raúl</label>
+                </p>
+                <p>
+                    <input type="radio" id="ardao" name="gb" value="ardao"/>
+                    <label for="other">Ardao</label>
+                </p>
+                <p>
+                    <input type="radio" id="alavez" name="gb" value="alavez"/>
+                    <label for="other">Acaban a la vez</label>
+                </p>
+            </div>
+            <div class="tab">Durante un examen práctico de Redes de Ordenadores te piden que configures un tomcat en tu ordenador para que este pueda escuchar todas las peticiones HTTP que le llegan desde fuera. ¿Cuál sería la configuración correcta y más eficiente para conseguirlo?
+                <p>
+                    <input type="radio" id="default80" name="ip" value="male"/>
+                    <label for="male">address=0.0.0.0 y port=80</label>
+                </p>
+                <p>
+                    <input type="radio" id="localhost80" name="ip" value="localhost80"/>
+                    <label for="female">address=localhost y port=80</label>
+                </p>
+                <p>
+                    <input type="radio" id="unoporcada" name="ip" value="unoporcada"/>
+                    <label for="other">Se crea un conector por cada dirección IP que tenga asignada tu ordenador</label>
+                </p>
+                <p>
+                    <input type="radio" id="ningunaAnterior" name="ip" value="ningunaAnterior"/>
+                    <label for="other">Ninguna de las anteriores</label>
+                </p>
+            </div>
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </form>
+    <script src="js/prueba.js"></script>
+    </body>
+</html>
