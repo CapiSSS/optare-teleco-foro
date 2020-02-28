@@ -30,11 +30,15 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    document.getElementById("regForm").submit();
-    return false;
+    validateResponses();
+    //document.getElementById("regForm").submit();
+    sendMail()
+    currentTab = currentTab - 1;
+    showTab(currentTab);
+  } else {
+    // Otherwise, display the correct tab:
+    showTab(currentTab);      
   }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
 }
 
 function validateForm() {
@@ -57,4 +61,32 @@ function validateForm() {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
   return false; // return the valid status
+}
+
+function validateResponses() {
+    gbResp = getResponse("gb");
+    ipResp = getResponse("ip");
+    alert (gbResp)
+    alert (ipResp)
+}
+
+function getResponse(name) {
+    var radios = document.getElementsByName(name);
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            // do whatever you want with the checked radio
+            return radios[i].value;
+        }
+    }
+}
+
+function sendMail() {
+    var link = "mailto:ssancho@optaresolutions.com"
+             + "?cc=myCCaddress@example.com"
+             + "&subject=" + escape("Prueba")
+             + "&body=" + escape("Esto es una prueba. Correo enviado desde código Javascript")
+    ;
+
+    window.location.href = link;
+    alert("Email enviado a ssancho@optaresolutions.com");
 }

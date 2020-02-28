@@ -2,6 +2,20 @@
   display: none;
 }
 
+label:hover, label:active, input:hover+label, input:active+label {
+    background:yellow;
+}
+
+input {
+    visibility:hidden;
+}
+label {
+    cursor: pointer;
+}
+input:checked + label {
+    background: yellow;
+}
+
 p {
     text-align: left !important;
 }
@@ -18,7 +32,7 @@ button:active {
     box-shadow: 0 0 0;
 }
 
-button:hover, button:focus {
+button:hover {
     color: #ffffff;
     text-decoration: none;
     background: #555555;
