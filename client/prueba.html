@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/base-css.css"/>
+        <link rel="stylesheet" href="css/div-wide-left.css"/>
+        <link rel="stylesheet" href="css/prueba.css"/>
+        <title>Test de Optare</title>
+    </head>
+    <body>
+        <form id="regForm" action="/results" method="post">
+            <h1>Optare Solutions</h1>
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">¿Cuántos años tiene la compañía?
+                <p>
+                    <input type="radio" id="doce" name="edadOptare" value="doce"/>
+                    <label for="doce">12</label>
+                </p>
+                <p>
+                    <input type="radio" id="dieciocho" name="edadOptare" value="dieciocho"/>
+                    <label for="dieciocho">18</label>
+                </p>
+                <p>
+                    <input type="radio" id="veinticinco" name="edadOptare" value="veinticinco"/>
+                    <label for="veinticinco">25</label>
+                </p>
+                <p>
+                    <input type="radio" id="nocomentamos" name="edadOptare" value="nocomentamos"/>
+                    <label for="nocomentamos">No comentamos nuestra edad</label>
+                </p>
+            </div>
+            <div class="tab">¿Qué hay todos los viernes en la oficina de Optare y siempre llevamos al stand del foro?
+                <p>
+                    <input type="radio" id="flashmob" name="viernes" value="flashmob"/>
+                    <label for="flashmob">Un flashmob</label>
+                </p>
+                <p>
+                    <input type="radio" id="gominolas" name="viernes" value="gominolas"/>
+                    <label for="gominolas">Gominolas</label>
+                </p>
+                <p>
+                    <input type="radio" id="villancicos" name="viernes" value="villancicos"/>
+                    <label for="villancicos">Villancicos</label>
+                </p>
+                <p>
+                    <input type="radio" id="bolitasdequeso" name="viernes" value="bolitasdequeso"/>
+                    <label for="bolitasdequeso">Bolitas de queso</label>
+                </p>
+            </div>
+            <div class="tab">¿Dónde tiene oficinas Optare?
+                <p>
+                    <input type="radio" id="vmmo" name="oficinas" value="vmmo"/>
+                    <label for="vmmo">Vigo, Madrid, México y Ourense</label>
+                </p>
+                <p>
+                    <input type="radio" id="vmco" name="oficinas" value="vmco"/>
+                    <label for="vmco">Vigo, Madrid, Colombia y Ourense</label>
+                </p>
+                <p>
+                    <input type="radio" id="vbom" name="oficinas" value="vbom"/>
+                    <label for="vbom">Vigo, Barcelona, Ourense y México</label>
+                </p>
+                <p>
+                    <input type="radio" id="vomb" name="oficinas" value="vomb"/>
+                    <label for="vomb">Vigo, Ourense, Madrid y Barcelona</label>
+                </p>
+            </div>
+            <div class="tab">¿Qué códigos de estado de respuesta HTTP hacen referencia a un error en el servidor?
+                <p>
+                    <input type="radio" id="2xx" name="statuscode" value="2xx"/>
+                    <label for="2xx">2xx</label>
+                </p>
+                <p>
+                    <input type="radio" id="3xx" name="statuscode" value="3xx"/>
+                    <label for="3xx">3xx</label>
+                </p>
+                <p>
+                    <input type="radio" id="4xx" name="statuscode" value="4xx"/>
+                    <label for="4xx">4xx</label>
+                </p>
+                <p>
+                    <input type="radio" id="5xx" name="statuscode" value="5xx"/>
+                    <label for="5xx">5xx</label>
+                </p>
+            </div>
+            <div class="tab">Miguel y Raúl se descargan desde la universidad compartiendo la misma conexión de 100Mbps un archivo de 1GB y 1Gb respectivamente. Un minuto después, Ardao se une y empieza a descargar un archivo de 274 millones de octetos. ¿Cuál es el último en acabar?
+                <p>
+                    <input type="radio" id="miguel" name="gb" value="miguel"/>
+                    <label for="miguel">Miguel</label>
+                </p>
+                <p>
+                    <input type="radio" id="raul" name="gb" value="raul"/>
+                    <label for="raul">Raúl</label>
+                </p>
+                <p>
+                    <input type="radio" id="ardao" name="gb" value="ardao"/>
+                    <label for="ardao">Ardao</label>
+                </p>
+                <p>
+                    <input type="radio" id="alavez" name="gb" value="alavez"/>
+                    <label for="alavez">Acaban a la vez</label>
+                </p>
+            </div>
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        </form>
+    <script src="js/prueba.js"></script>
+    </body>
+</html>

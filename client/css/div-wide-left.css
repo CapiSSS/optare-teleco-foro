@@ -1,0 +1,7 @@
+div {
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 100px;
+  box-shadow: 10px 10px 0 #000000;
+  text-align: left;
+}

@@ -1,0 +1,36 @@
+button:active {
+    margin: 30px 0 30px 30px;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0;
+    -moz-box-shadow: 0 0 0;
+    box-shadow: 0 0 0;
+}
+
+button:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background: #555555;
+    outline: 0;
+}
+
+button {
+    color: #000000;
+    background: #bbbbbb;
+    padding: 10px 10px;
+    font-size: 18px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    display: inline-block;
+    margin-bottom: 20px;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: default;
+    border: 0;
+    border-width: 0;
+    -webkit-box-shadow: 10px 10px 0 #000000;
+    -moz-box-shadow: 10px 10px 0 #000000;
+    box-shadow: 10px 10px 0 #000000;
+    margin: 20px;
+}

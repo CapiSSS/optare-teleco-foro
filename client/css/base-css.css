@@ -1,13 +1,9 @@
-input {
-    width: 50%;
-}
-
 form {
-    margin: 10px
+    margin: 10px;
 }
 
 button:active {
-    margin: 10px 0 10px 10px;
+    margin: 30px 0 30px 30px;
     outline: 0;
     -webkit-box-shadow: 0 0 0;
     -moz-box-shadow: 0 0 0;
@@ -40,6 +36,7 @@ button {
     -webkit-box-shadow: 10px 10px 0 #000000;
     -moz-box-shadow: 10px 10px 0 #000000;
     box-shadow: 10px 10px 0 #000000;
+    margin: 20px;
 }
 
 h1 {
@@ -80,14 +77,6 @@ a:hover, a:active {
   font-weight: normal;
   src: url('fonts/Fixedsys500c.eot');
   src: local('☺'), url('fonts/Fixedsys500c.woff') format('woff'), url('fonts/Fixedsys500c.ttf') format('truetype'), url('fonts/Fixedsys500c.svg') format('svg');
-}
-
-div {
-  padding: 10px;
-  border: 5px solid gray;
-  margin: 100px;
-  box-shadow: 10px 10px 0 #000000;
-  text-align: center;
 }
 
 body {

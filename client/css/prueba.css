@@ -1,0 +1,24 @@
+.tab {
+  display: none;
+}
+
+label:hover, label:active, input:hover+label, input:active+label {
+    background:yellow;
+}
+
+input {
+    visibility:hidden;
+}
+
+label {
+    cursor: pointer;
+    text-align: left;
+}
+
+input:checked + label {
+    background: yellow;
+}
+
+p {
+    text-align: left;
+}
