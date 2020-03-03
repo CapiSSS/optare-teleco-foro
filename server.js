@@ -32,14 +32,17 @@ app.post('/results', (request, response) => {
   console.log(request.body)
   var qEdadOptare = request.body.edadOptare
   var qViernes = request.body.viernes
-  var qOficinas = request.body.oficinas
+  var qContinente = request.body.continente
+  var qLenguaje = request.body.lenguaje
   var qCodigoEstado = request.body.statuscode
   var qGB = request.body.gb
   if('dieciocho' !== qEdadOptare) {
     response.sendFile(__dirname + "/client/prueba-fallida.html")
   } else if('gominolas' !== qViernes) {
     response.sendFile(__dirname + "/client/prueba-fallida.html")
-  } else if('vmmo' !== qOficinas) {
+  } else if('antartida' !== qContinente) {
+    response.sendFile(__dirname + "/client/prueba-fallida.html")
+  } else if('todos' !== qLenguaje) {
     response.sendFile(__dirname + "/client/prueba-fallida.html")
   } else if('5xx' !== qCodigoEstado) {
     response.sendFile(__dirname + "/client/prueba-fallida.html")
