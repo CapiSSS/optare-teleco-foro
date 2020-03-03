@@ -68,3 +68,20 @@ app.post('/email', (request, response) => {
     response.redirect(307, '/congratulations')
   })
 })
+
+app.get('/2d0k2043s7980423l20d8slim7ism', (request, response) => {
+  db.collection('emails').find({}).sort( { fecha: 1 } ).toArray(function(err, result) {
+    if (err) {
+      console.log(err)
+    } else {
+      var output = '<html><header><title>Foro Tecnoloxico Optare</title></header><body>';
+      output += '<h1>Lista de correos inscritos</h1>';
+      output += '<table border="1"><tr><td><b>' + 'Name' + '</b></td><td><b>' + 'Email' + '</b></td><td><b>' + 'Fecha' + '</b></td><td><b>' + 'Respuestas' + '</b></td></tr>';
+      result.forEach(function(item){
+        output += '<tr><td>' + item.nombre + '</td><td>' + item.email + '</td><td>' + item.fecha + '</td><td>' + item.responses + '</td></tr>';
+      });
+      output += '</table></body></html>'
+      response.send(output);
+    }
+  });
+})
