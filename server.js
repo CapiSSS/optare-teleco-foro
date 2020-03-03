@@ -15,7 +15,7 @@ MongoClient.connect('mongodb+srv://optare:0pt4r3s0lut10ns@foro-teleco-sy7ow.gcp.
   db = client.db('foro-teleco')
   db.collection('emails').createIndex( { email: 1 }, { unique: true } )
   app.listen(2002, () => {
-    console.log('Servidor web iniciado')
+    console.log('Servidor web iniciado en el puerto 2002')
   })
 })
 
@@ -30,7 +30,7 @@ app.post('/test', (request, response) => {
 app.post('/results', (request, response) => {
   console.log('Respuestas:')
   console.log(request.body)
-  var qEdadOptare = request.body.edadOptare
+  /*var qEdadOptare = request.body.edadOptare
   var qViernes = request.body.viernes
   var qContinente = request.body.continente
   var qLenguaje = request.body.lenguaje
@@ -50,7 +50,8 @@ app.post('/results', (request, response) => {
     response.sendFile(__dirname + "/client/prueba-fallida.html")
   } else {
     response.sendFile(__dirname + "/client/email.html")
-  }
+  }*/
+  response.sendFile(__dirname + "/client/email.html")
 })
 
 app.post('/congratulations', function(request, response) {
