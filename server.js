@@ -19,7 +19,7 @@ MongoClient.connect('mongodb+srv://optare:0pt4r3s0lut10ns@foro-teleco-sy7ow.gcp.
   })
 })
 
-app.get('/', function(request, response) {
+app.post('/', function(request, response) {
   response.sendFile(__dirname + "/client/index.html")
 });
 
@@ -53,6 +53,10 @@ app.post('/results', (request, response) => {
   }
 })
 
+app.post('/congratulations', function(request, response) {
+  response.sendFile(__dirname + "/client/video.html")
+});
+
 app.post('/email', (request, response) => {
   db.collection('emails').insertOne(request.body, (err, result) => {
     if (err) {
@@ -60,6 +64,6 @@ app.post('/email', (request, response) => {
     } else {
         console.log(request.body.email + ' saved to database')
     }
-    response.sendFile(__dirname + "/client/video.html")
+    response.redirect(307, '/congratulations')
   })
 })
