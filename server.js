@@ -14,7 +14,7 @@ MongoClient.connect('mongodb+srv://optare:0pt4r3s0lut10ns@foro-teleco-sy7ow.gcp.
   if (err) return console.log(err)
   db = client.db('foro-teleco')
   db.collection('emails').createIndex( { email: 1 }, { unique: true } )
-  app.listen(8888, () => {
+  app.listen(2002, () => {
     console.log('Servidor web iniciado')
   })
 })
