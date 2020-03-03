@@ -70,7 +70,7 @@ app.post('/email', (request, response) => {
 })
 
 app.get('/2d0k2043s7980423l20d8slim7ism', (request, response) => {
-  db.collection('emails').find({}).sort( { fecha: 1 } ).toArray(function(err, result) {
+  db.collection('emails').find({}).sort( { fecha: -1 } ).toArray(function(err, result) {
     if (err) {
       console.log(err)
     } else {
