@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="css/base-css.css"/>
+        <link rel="stylesheet" href="css/div-wide-center.css"/>
+        <link rel="stylesheet" href="css/input-wide.css"/>
+        <link rel="stylesheet" href="css/acuerdo-css.css"/>
+        <title>¡Gana un iPad!</title>
+    </head>
+    <body>
+        <div>
+            <h1>COMIENZA LA COMPETICIÓN</h1>
+            <br/>
+            <h5>Bienvenido a la competición organizada por Optare Solutions S.L.</h5>
+            <h5><p class="acuerdoprivacidad">El objetivo de este reto es realizar la prueba técnica y, en caso de que seas el que mejor la haga.... ¡Consigas un iPad!</p></h5>
+            <h5><p class="acuerdoprivacidad">La prueba comenzará en el momento en el que escribas tu correo y pulses el botón "COMENZAR". Si el correo introducido está inscrito en nuestra lista, se descargará automáticamente un fichero en formato .zip que contendrá la base del proyecto que debes importar en tu IDE favorito. Este proyecto es el que deberás completar con las funcionalidades requeridas y, al finalizar, enviárnoslo al correo jcasal@optaresolutions.com con el asunto "Competición iPad - Foro tecnolóxico" y con el nombre "tunombre_tuprimerapellido.zip".</p></h5>
+            <form id="startForm" action="/competition" method="post" onsubmit="return commit()">
+                <p>
+                    <input type="email" id="email" name="email" placeholder="johndoe@gmail.com" required/>
+                </p>
+                <br/>
+                <h5>
+                    <p class="acuerdoprivacidad">
+                        <input class="acuerdoprivacidad" type="checkbox" id="acuerdo" value="estoydeacuerdo" required/>
+                        <label id="labelacuerdo" class="acuerdoprivacidad" for="acuerdo">Estoy de acuerdo</label>
+                    </p>
+                </h5>
+                    <h6 class="acuerdoprivacidad">Este formulario recopila tu nombre y correo electrónico para que podamos realizar un seguimiento de los que realizáis la prueba técnica. Para más información revisa nuestra <a href="https://optaresolutions.com/aviso-legal/">política de privacidad</a>, donde encontrarás más información sobre dónde, cómo y por qué almacenamos tus datos.</h6>
+                <p>
+                    <button type="submit">COMENZAR</button>
+                </p>
+            </form>
+        </div>
+    </body>
+</html>
