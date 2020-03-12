@@ -15,8 +15,8 @@ MongoClient.connect('mongodb+srv://optare:0pt4r3s0lut10ns@foro-teleco-sy7ow.gcp.
   db = client.db('foro-teleco')
   db.collection('emails').createIndex( { email: 1 }, { unique: true } )
   db.collection('competition').createIndex( { email: 1 }, { unique: true } )
-  app.listen(2020, () => {
-    console.log('Servidor web iniciado en el puerto 2020')
+  app.listen(2002, () => {
+    console.log('Servidor web iniciado en el puerto 2002')
   })
 })
 
@@ -37,15 +37,20 @@ app.post('/competition', function(request, response) {
         console.log(err)
         response.status(500).send('Ha ocurrido un error al verificar tu cuenta de email. Vuelve a intentarlo.')
       } else {
-        request.body.fecha_inicio = getFormattedDate()
-        db.collection('competition').insertOne(request.body, (err2, result2) => {
-          if (err2) {
-            response.status(401).send('Ha ocurrido un error al registrar tu cuenta de email: ' err2)
-          } else {
-            console.log(request.body.email + ' started competition at ' + request.body.fecha_inicio)
-            response.download(__dirname + "/client/index.html")
-          }
-        })
+        if (result == null) {
+          response.redirect('/unauthorized')
+        } else {
+          request.body.fecha_inicio = getFormattedDate()
+          db.collection('competition').insertOne(request.body, (err2, result2) => {
+            if (err2) {
+              console.log(request.body.fecha_inicio + ' - ' + request.body.email + ' had already started the competition before (see "fecha_inicio" in database)')
+              console.log(err2)
+            } else {
+              console.log(request.body.fecha_inicio + ' - ' + request.body.email + ' starts competition')
+            }
+            response.download(__dirname + "/client/StarWars-Challenge.zip")
+          })
+        }
       }
     })
   }
