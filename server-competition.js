@@ -56,6 +56,27 @@ app.post('/competition', function(request, response) {
   }
 })
 
+app.get('/2d0k2043s7980423l20d8slim7ism', (request, response) => {
+  db.collection('emails').find({}).sort( { fecha: -1 } ).toArray(function(err, result) {
+    if (err) {
+      console.log(err)
+    } else {
+      db.collection('competition').find({}).sort( { fecha_inicio: -1 } ).toArray(function(err2, result2) {
+        var resultado = result2.map(x => Object.assign(x, result.find(y => y.email === x.email)))
+        var output = '<html><header><title>Reto Foro Tecnoloxico Optare</title></header><body>'
+        output += '<h1>Lista de correos</h1>'
+        output += '<h3>Total: ' + resultado.length + '</h3>'
+        output += '<table border="1"><tr><td><b>' + 'Inicio' + '</b></td><td><b>' + 'Nombre' + '</b></td><td><b>' + 'Email' + '</b></td><td><b>' + 'Fecha' + '</b></td><td><b>' + 'Respuestas' + '</b></td></tr>'
+        resultado.forEach(function(item){
+          output += '<tr><td>' + item.fecha_inicio + '</td><td>' + item.nombre + '</td><td>' + item.email + '</td><td>' + item.fecha + '</td><td>' + item.responses + '</td></tr>'
+        });
+        output += '</table></body></html>'
+        response.send(output)
+      })
+    }
+  });
+})
+
 function getFormattedDate() {
   var d = new Date()
   var fecha = "" + d.getFullYear() + "-" + appendLeadingZeroes(d.getMonth() + 1) + "-" + appendLeadingZeroes(d.getDate())
