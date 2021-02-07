@@ -19,7 +19,7 @@ To allow the code to run on the server side, some prerequisites are needed:
 	- `npm install express`: to manage the http requests
 	- `npm install mongodb`: to manage the database connection
 
-The code is ready to work with an existing MongoDB account in cloud. In case a new MongoDB database in another account is required, then just modify the line 13 in `server.js` and `server-competition.js` to connect to the new deployed database:
+The code is ready to work with an existing MongoDB account in cloud. In case a new MongoDB database in another account is required, then just modify the [line 13](server.js#L13) in `server.js` and `server-competition.js` to connect to the new deployed database:
 
 `MongoClient.connect('modify the database URL here',...)`
 
